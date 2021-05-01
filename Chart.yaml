@@ -1,0 +1,11 @@
+---
+apiVersion: v2
+description: A Helm chart for deploying the Pi-hole volume to a Kubernetes cluster.
+keywords:
+  - Pi-hole
+  - volume
+maintainers:
+  - name: Christian Schlichtherle
+    url: https://christian.schlichtherle.de
+name: pihole-volume
+version: 0.1.0-SNAPSHOT

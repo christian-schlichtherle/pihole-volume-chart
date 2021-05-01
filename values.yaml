@@ -1,0 +1,10 @@
+---
+fullnameOverride: ""
+iqn: ""
+lun: 1
+nameOverride: pihole
+password: ""
+storageCapacity: 1Gi
+storageClassName: ""
+targetPortal: ""
+username: ""

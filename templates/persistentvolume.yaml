@@ -1,0 +1,25 @@
+---
+{{- with $.Values }}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    {{- include "labels" $ | nindent 4 }}
+  name: {{ include "name" $ }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: {{ .storageCapacity }}
+  iscsi:
+    chapAuthSession: true
+    iqn: {{ .iqn }}
+    lun: {{ .lun }}
+    secretRef:
+      name: {{ include "fullname" $ }}
+      namespace: {{ $.Release.Namespace }}
+    targetPortal: {{ .targetPortal }}
+{{- with .storageClassName }}
+  storageClassName: {{ . }}
+{{- end }}
+{{- end }}
